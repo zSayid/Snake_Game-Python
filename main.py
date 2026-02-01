@@ -30,7 +30,7 @@ def our_snake(snake_block, snake_List):
             dis, black, [x[0], x[1], snake_block, snake_block])
 
 
-def Your_score(score):
+def Score(score):
     value = score_font.render("Your score: " + str(score), True, yellow)
     dis.blit(value, [0, 0])
 
@@ -61,7 +61,7 @@ def gameLoop():
         while game_close == True:
             dis.fill(blue)
             message("You Lost! Press C-Play Again or Q-Quit", red)
-            Your_score(Length_of_snake - 1)
+            Score(Length_of_snake - 1)
             pygame.display.update()
 
             for event in pygame.event.get():
@@ -107,7 +107,7 @@ def gameLoop():
             if x == snake_Head:
                 game_close = True
         our_snake(snake_block, snake_List)
-        Your_score(Length_of_snake - 1)
+        Score(Length_of_snake - 1)
         pygame.display.update()
         if x1 == foodx and y1 == foody:
             foodx = round(random.randrange(
